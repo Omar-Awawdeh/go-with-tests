@@ -1,8 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 const (
+	spanish = "spanish"
+	french  = "french"
+
 	englishHelloPrefix = "Hello, "
 	spanishHelloPrefix = "Hola, "
 	frenchHelloPrefix  = "Bonjour, "
@@ -18,10 +24,10 @@ func Hello(name, language string) string {
 }
 
 func helloPrefix(language string) (prefix string) {
-	switch language {
-	case "Spanish":
+	switch strings.ToLower(language) {
+	case spanish:
 		prefix = spanishHelloPrefix
-	case "French":
+	case french:
 		prefix = frenchHelloPrefix
 	default:
 		prefix = englishHelloPrefix
